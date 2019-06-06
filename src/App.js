@@ -21,11 +21,22 @@ export default class App extends Component {
     }
   }
 
+  randomIntFromInterval(min,max) // min and max included
+  {
+      return Math.floor(Math.random()*(max-min+1)+min);
+  }
+
+  // setInterval( function() => {
+  //   this.state.batimento = randomIntFromInterval(90, 120)
+  // }, 3000)
+
+  
+
   testaSeTaAlto(){
     if(parseInt(this.state.batimento, 10) == 100){
       alert('Cuidado, batimento cardíado alto')
     }else{
-      <Text>Ola mundoooooo</Text>
+      alert('Ola mundoooooo')
     }
   }
 

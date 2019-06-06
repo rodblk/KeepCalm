@@ -10,6 +10,7 @@
     "firebase": "^6.1.0",
     "formik": "^1.5.7",
     "react": "16.8.3",
+    "react-navigation": "2.7.0",
     "react-native": "^0.59.9",
     "react-native-maps": "^0.24.2",
     "react-native-maps-directions": "^1.7.0"
