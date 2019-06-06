@@ -3,6 +3,7 @@ import { createDrawerNavigator } from 'react-navigation'
 
 import App from './App'
 import AddRemedio from './screens/AddRemedio'
+import ListaRemedio from './screens/ListaRemedio'
 
 export default createDrawerNavigator({
     App: {
@@ -12,5 +13,9 @@ export default createDrawerNavigator({
     AddRemedio: {
         screen: () => <AddRemedio/>,
         navigationOptions: { title: 'Adicionar Remédio' }
+    },
+    ListaRemedio: {
+        screen: () => <ListaRemedio/>,
+        navigationOptions: { title: 'Lista de Remédios' }
     }
 }, {drawerWidth: 300})

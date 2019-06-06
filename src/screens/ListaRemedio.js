@@ -7,7 +7,8 @@
  */
 
 import React, {Component} from 'react';
-import {StyleSheet, Text, View, Button} from 'react-native';
+import {StyleSheet, Text, View} from 'react-native';
+import Card from '../components/Card'
 
 export default class App extends Component {
 
@@ -31,9 +32,9 @@ export default class App extends Component {
 
   testaSeTaAlto(){
     if(parseInt(this.state.batimento, 10) == 100){
-      alert('Cuidado, batimento cardíado alto')
+      alert(<Text style={styles.valorRate}>Cuidado, batimento cardíado alto</Text>)
     }else{
-      alert('Ola mundoooooo')
+      alert(<Text style={styles.valorRate}>Ola mundoooooo</Text>)
     }
   }
 
@@ -45,13 +46,36 @@ export default class App extends Component {
           <Text style={styles.title}>KeepCalm</Text>
         </View>
 
-        <View style={styles.contentCentral}>
-          <Text style={styles.valorRate}>Batimentos</Text>
+        <View>
+          <Card 
+          nome="Dorflex" 
+          dataInicial="01/01/2019" 
+          dataFinal="05/01/2019"
+          horario="05:00"
+          frequencia="terça, quinta"
+          dosagem="1"
+          estoque="15"/>
+
+          <Card 
+          nome="Paracetamol" 
+          dataInicial="12/01/2019" 
+          dataFinal="13/01/2019"
+          horario="09:00"
+          frequencia="terça"
+          dosagem="1"
+          estoque="5"/>
+
+          <Card 
+          nome="Remedio 3" 
+          dataInicial="10/03/2019" 
+          dataFinal="20/03/2019"
+          horario="13:00"
+          frequencia="sexta, sabádo, domingo"
+          dosagem="10ml"
+          estoque="10"/>
         </View>
-        <View style={styles.contentCentral}>
-          <Text style={styles.valorRate}>{this.state.batimento}</Text>
-          <Button title="Alertar" onPress={() => this.testaSeTaAlto()} color="#6495ED"/>
-        </View>
+
+        
       </View>
       
     );
