@@ -9,8 +9,26 @@
 import React, {Component} from 'react';
 import {StyleSheet, Text, View, Button} from 'react-native';
 import Card from './components/Card'
+import AddRemedio from './screens/AddRemedio'
+import Maps from './screens/Example'
 
 export default class App extends Component {
+
+  constructor(){
+    super()
+    this.state={
+        batimento: '120'
+    }
+  }
+
+  testaSeTaAlto(){
+    if(parseInt(this.state.batimento, 10) == 100){
+      alert('Cuidado, batimento cardíado alto')
+    }else{
+      <Text>Ola mundoooooo</Text>
+    }
+  }
+
   render() {
 
     return (
@@ -18,18 +36,25 @@ export default class App extends Component {
         <View name="NavBar" style={styles.navBar}>
           <Text style={styles.title}>KeepCalm</Text>
           <Button title="Adicionar" color="#6495ED"/>
+          {/* <Maps/> */}
         </View>
 
-        <View>
-          <Card />
-        </View>
+        {/* <AddRemedio/> */}
 
-        <View>
+        <View style={styles.contentCentral}>
           <Text style={styles.valorRate}>Batimentos</Text>
         </View>
-        <View>
-          <Text style={styles.valorRate}>100</Text>
+        <View style={styles.contentCentral}>
+          <Text style={styles.valorRate}>{this.state.batimento}</Text>
+          <Button title="Alertar" onPress={() => this.testaSeTaAlto()} color="#6495ED"/>
         </View>
+
+
+        {/* <View>
+          <Card />
+        </View> */}
+
+        
       </View>
       
     );
@@ -53,6 +78,10 @@ const styles = StyleSheet.create({
     flex: 0,
     flexDirection: "row",
     justifyContent: "space-between",
+  },
+  contentCentral: {
+    justifyContent: "center",
+    alignSelf: "center"
   }
 });
 
