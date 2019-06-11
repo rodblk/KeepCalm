@@ -9,7 +9,6 @@
 import React, {Component} from 'react';
 import {StyleSheet, Text, View, ScrollView} from 'react-native';
 // import Card from '../components/Card'
-import { Icon } from 'react-native-elements'
 
 export default class ListaRemedio extends Component {
 
@@ -57,9 +56,13 @@ export default class ListaRemedio extends Component {
         <View style={styles.container}>
           <View name="NavBar" style={styles.navBar}>
             <Text style={styles.title}>KeepCalm</Text>
+
+            <View style={styles.contentCentral}>
+              <Text style={styles.aviso}>Cuidado seu ritmo cardíaco está muito alto!</Text>
+            </View>
+            
           </View>
 
-          <Icon name="exclamation-triangle"/>
       </View>
     </ScrollView>
     );
@@ -87,5 +90,9 @@ const styles = StyleSheet.create({
   contentCentral: {
     justifyContent: "center",
     alignSelf: "center"
+  },
+  aviso: {
+    fontSize: 25,
+    margin: 25
   }
 });
