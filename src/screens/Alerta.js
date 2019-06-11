@@ -8,7 +8,8 @@
 
 import React, {Component} from 'react';
 import {StyleSheet, Text, View, ScrollView} from 'react-native';
-import Card from '../components/Card'
+// import Card from '../components/Card'
+import { Icon } from 'react-native-elements'
 
 export default class ListaRemedio extends Component {
 
@@ -39,7 +40,7 @@ export default class ListaRemedio extends Component {
   //   this.state.batimento = randomIntFromInterval(90, 120)
   // }, 3000)
 
-  
+
 
   testaSeTaAlto(){
     if(parseInt(this.state.batimento, 10) == 100){
@@ -58,36 +59,9 @@ export default class ListaRemedio extends Component {
             <Text style={styles.title}>KeepCalm</Text>
           </View>
 
-          <View>
-            <Card 
-            nome="Dorflex" 
-            dataInicial="01/01/2019" 
-            dataFinal="05/01/2019"
-            horario="05:00"
-            frequencia="terça, quinta"
-            dosagem="1"
-            estoque="15"/>
-
-            <Card 
-            nome="Paracetamol" 
-            dataInicial="12/01/2019" 
-            dataFinal="13/01/2019"
-            horario="09:00"
-            frequencia="terça"
-            dosagem="1"
-            estoque="5"/>
-
-            <Card 
-            nome="Remedio 3" 
-            dataInicial="10/03/2019" 
-            dataFinal="20/03/2019"
-            horario="13:00"
-            frequencia="sexta, sabádo, domingo"
-            dosagem="10ml"
-            estoque="10"/>
-          </View>
+          <Icon name="exclamation-triangle"/>
       </View>
-    </ScrollView>  
+    </ScrollView>
     );
   }
 }
@@ -115,5 +89,3 @@ const styles = StyleSheet.create({
     alignSelf: "center"
   }
 });
-
-

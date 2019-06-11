@@ -8,15 +8,36 @@
 
 import React, {Component} from 'react';
 import {StyleSheet, Text, View, Button} from 'react-native';
+//var request = require('request');
+//url = 'http://172.30.10.152:5000'
+
+
 
 export default class App extends Component {
 
+  static navigationOptions = {
+      title: 'Home',
+      headerStyle: {
+        backgroundColor: '#f4511e',
+      },
+      headerTintColor: '#fff',
+      headerTitleStyle: {
+        fontWeight: 'bold',
+      },
+    };
+
   constructor(){
     super()
-    this.state={
-        batimento: '120'
+
+    this.state = {
+      batimento: 87
     }
+
+
+
+
   }
+
 
   randomIntFromInterval(min,max) // min and max included
   {
@@ -27,13 +48,19 @@ export default class App extends Component {
   //   this.state.batimento = randomIntFromInterval(90, 120)
   // }, 3000)
 
-  
+
 
   testaSeTaAlto(){
+    //var myRequest = new Request('http://172.30.10.152:5000/')
+    //var myURL = myRequest.url;
+
+    //request('http://172.30.10.152:5000', function (error,response, body) {
+    //  })
+
     if(parseInt(this.state.batimento, 10) == 100){
-      alert('Cuidado, batimento cardíado alto')
+      alert(request.response)
     }else{
-      alert('Ola mundoooooo')
+      alert(request.response)
     }
   }
 
@@ -50,10 +77,10 @@ export default class App extends Component {
         </View>
         <View style={styles.contentCentral}>
           <Text style={styles.valorRate}>{this.state.batimento}</Text>
-          <Button title="Alertar" onPress={() => this.testaSeTaAlto()} color="#6495ED"/>
+          <Button title="Alertar" onPress={() => this.props.navigation.navigate("Alerta")} color="#6495ED"/>
         </View>
       </View>
-      
+
     );
   }
 }
@@ -81,5 +108,3 @@ const styles = StyleSheet.create({
     alignSelf: "center"
   }
 });
-
-

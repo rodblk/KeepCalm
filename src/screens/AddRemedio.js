@@ -77,7 +77,7 @@ const styles = StyleSheet.create({
     padding: 30,
     flexDirection: 'column',
     justifyContent: 'center',
-    backgroundColor: '#6565fc'
+    backgroundColor: '#FFF'
   },
   title: {
     marginBottom: 20,
